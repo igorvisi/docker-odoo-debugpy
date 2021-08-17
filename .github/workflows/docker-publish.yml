@@ -33,8 +33,8 @@ jobs:
           context: ./12.0
           push: ${{ github.event_name != 'pull_request' }}
           tags: |
-            igorvisi/docker-volume-backup:12.0
-            igorvisi/docker-volume-backup:12
+            igorvisi/odoo-debugpy:12.0
+            igorvisi/odoo-debugpy:12
 
       - name: Build and push Docker image for Odoo 13
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
@@ -42,8 +42,8 @@ jobs:
           context: ./13.0
           push: ${{ github.event_name != 'pull_request' }}
           tags: |
-            igorvisi/docker-volume-backup:13.0
-            igorvisi/docker-volume-backup:13
+            igorvisi/odoo-debugpy:13.0
+            igorvisi/odoo-debugpy:13
 
       - name: Build and push Docker image for Odoo 14
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
@@ -51,6 +51,6 @@ jobs:
           context: ./14.0
           push: ${{ github.event_name != 'pull_request' }}
           tags: |
-            igorvisi/docker-volume-backup:14.0
-            igorvisi/docker-volume-backup:14
-            igorvisi/docker-volume-backup:latest
+            igorvisi/odoo-debugpy:14.0
+            igorvisi/odoo-debugpy:14
+            igorvisi/odoo-debugpy:latest
