@@ -1,5 +1,4 @@
 FROM debian:buster-slim
-MAINTAINER Odoo S.A. <info@odoo.com>
 
 SHELL ["/bin/bash", "-xo", "pipefail", "-c"]
 
@@ -51,6 +50,9 @@ RUN echo 'deb http://apt.postgresql.org/pub/repos/apt/ buster-pgdg main' > /etc/
 
 # Install rtlcss (on Debian buster)
 RUN npm install -g rtlcss
+
+# Install debugpy, an implementation of the Debug Adapter Protocol for Python and inotify for monitoring filesystem events.Need for autoreload
+RUN pip3 install --no-cache-dir debugpy inotify
 
 # Install Odoo
 ENV ODOO_VERSION 13.0

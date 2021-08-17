@@ -1,5 +1,4 @@
 FROM debian:stretch-slim
-MAINTAINER Odoo S.A. <info@odoo.com>
 
 SHELL ["/bin/bash", "-xo", "pipefail", "-c"]
 
@@ -64,6 +63,9 @@ RUN echo "deb http://deb.nodesource.com/node_8.x stretch main" > /etc/apt/source
     && apt-get install --no-install-recommends -y nodejs \
     && npm install -g rtlcss \
     && rm -rf /var/lib/apt/lists/*
+
+# Install debugpy, an implementation of the Debug Adapter Protocol for Python and inotify for monitoring filesystem events.Need for autoreload
+RUN pip3 install --no-cache-dir debugpy inotify
 
 # Install Odoo
 ENV ODOO_VERSION 12.0
